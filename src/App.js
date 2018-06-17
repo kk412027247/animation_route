@@ -1,12 +1,6 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import {
-  BrowserRouter ,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter , Switch, Route, Link, Redirect } from "react-router-dom";
 import './App.css'
 
 const AnimationRoute = () => (
@@ -27,14 +21,18 @@ const AnimationRoute = () => (
             <NavLink to="/rgb/240/98/146">Pink</NavLink>
           </ul>
 
+          <div>{console.log(location)}</div>
           <div style={styles.content}>
             {/*和平时使用动画组件没啥区别，*/}
             {/*在渲染的路由的地方加一个用动画组件包着，并添加css属性即可；*/}
             <TransitionGroup>
               <CSSTransition
-                // 强烈建议加一个key属性，让react认识每个组件，进而进行正确的加载。
-                key={location.key}
+                // 需要加一个key属性，让react认识每个组件，并进行正确的加载。
+                // 这里我改了官方demo的代码， 原来是设置成location.key， 这样的话每次点击同一个路由链接的时候都会渲染。
+                key={location.pathname}
+                // classNames 就是设置给css动画的标示，记得'classNames'带's'的。
                 classNames="fade"
+                // 动画时间设置为800ms，和css中的需要一致。
                 timeout={800}
               >
                 <Switch location={location}>
