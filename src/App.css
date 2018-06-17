@@ -1,0 +1,35 @@
+.appAppear-appear{
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0);
+}
+
+.appAppear-appear.appAppear-appear-active{
+  opacity: 1;
+  transform: scale(1);
+  transition: 500ms ease-out;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0);
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 800ms ease-out;
+  transform-origin: top left;
+}
+
+.fade-exit{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit.fade-exit-active{
+  opacity:0;
+  transform: scale(0);
+  transition: 800ms ease-out;
+}
