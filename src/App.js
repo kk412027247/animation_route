@@ -4,7 +4,7 @@ import { BrowserRouter , Switch, Route, Link, Redirect } from "react-router-dom"
 import './App.css'
 
 const AnimationRoute = () => (
-  <BrowserRouter>
+  <BrowserRouter basename='/animationroute'>
     <Route
       render={({ location }) => (
         <div style={styles.fill}>
